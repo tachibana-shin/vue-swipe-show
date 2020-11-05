@@ -1,12 +1,13 @@
 const { resolve } = require('path')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const { name } = require("./package.json")
 
 module.exports = {
    entry: resolve(__dirname, 'src/index.js'),
    output: {
       path: resolve(__dirname, 'dist'),
-      filename: 'vue-nav-auto.js'
+      filename: '.js'
    },
    plugins: [
         new UglifyJsPlugin({

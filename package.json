@@ -1,22 +1,25 @@
 {
-   "name": "vue-touch-scroll",
-   "version": "0.0.2-alpha10",
-   "description": "A plugin scroll cross browser for Vue.js. Support for Chrome, Firefox, Safari, Opera, EDGE.",
+   "name": "vue-swipe-show",
+   "version": "0.0.1",
+   "description": "The amazing plugin allows you to open menus by swiping from the sides just like Android.",
    "main": "src/index.js",
    "author": "Nguyen Thanh",
    "license": "MIT",
    "repository": {
       "type": "git",
-      "url": "git+ssh://git@github.com/nguyenthanh1995/vue-touch-scroll.git"
+      "url": "git+ssh://git@github.com/nguyenthanh1995/vue-swipe-show.git"
    },
    "keywords": [
-      "scroll",
-      "vue-touch-scroll"
+      "swipe",
+		"vue",
+		"android",
+		"menu",
+      "vue-swipe-show"
    ],
    "bugs": {
-      "url": "https://github.com/nguyenthanh1995/vue-touch-scroll/issues"
+      "url": "https://github.com/nguyenthanh1995/vue-swipe-show/issues"
    },
-   "homepage": "https://github.com/nguyenthanh1995/vue-touch-scroll#readme",
+   "homepage": "https://github.com/nguyenthanh1995/vue-swipe-show#readme",
    "scripts": {
       "dev": "node_modules/webpack/bin/webpack.js --mode production --watch --progress --hide-modules",
       "build": "node_modules/webpack/bin/webpack.js --mode production --progress --hide-module"
@@ -29,6 +32,8 @@
       "babel-loader": "^8.1.0",
       "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
       "uglifyjs-webpack-plugin": "^2.2.0",
+      "vue-loader": "^15.9.5",
+      "vue-template-compiler": "^2.6.12",
       "webpack": "^4.44.2",
       "webpack-cli": "^3.3.12"
    },
