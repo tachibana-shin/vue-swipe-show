@@ -1,0 +1,50 @@
+{
+   "name": "vue-touch-scroll",
+   "version": "0.0.2-alpha10",
+   "description": "A plugin scroll cross browser for Vue.js. Support for Chrome, Firefox, Safari, Opera, EDGE.",
+   "main": "src/index.js",
+   "author": "Nguyen Thanh",
+   "license": "MIT",
+   "repository": {
+      "type": "git",
+      "url": "git+ssh://git@github.com/nguyenthanh1995/vue-touch-scroll.git"
+   },
+   "keywords": [
+      "scroll",
+      "vue-touch-scroll"
+   ],
+   "bugs": {
+      "url": "https://github.com/nguyenthanh1995/vue-touch-scroll/issues"
+   },
+   "homepage": "https://github.com/nguyenthanh1995/vue-touch-scroll#readme",
+   "scripts": {
+      "dev": "node_modules/webpack/bin/webpack.js --mode production --watch --progress --hide-modules",
+      "build": "node_modules/webpack/bin/webpack.js --mode production --progress --hide-module"
+   },
+   "devDependencies": {
+      "@babel/core": "^7.0.0-rc.1",
+      "@babel/preset-env": "^7.0.0-rc.1",
+      "@babel/register": "^7.0.0-rc.1",
+      "babel": "^6.23.0",
+      "babel-loader": "^8.1.0",
+      "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+      "uglifyjs-webpack-plugin": "^2.2.0",
+      "webpack": "^4.44.2",
+      "webpack-cli": "^3.3.12"
+   },
+   "babel": {
+      "presets": [
+         [
+            "@babel/preset-env",
+            {
+               "targets": {
+                  "node": "current"
+               }
+            }
+         ]
+      ],
+      "plugins": [
+         "transform-es2015-modules-commonjs"
+      ]
+   }
+}
