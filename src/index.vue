@@ -88,7 +88,8 @@
             default: true
          },
          stopPropagation: Boolean,
-         useTransform: Boolean
+         useTransform: Boolean,
+			clickable: Boolean
       },
       data: () => ({
          top: undefined,
@@ -169,7 +170,7 @@
             }
          },
          offAllEvent() {
-            this.$options.listeners.forEach(item => window.removeEventListener(item.name, item.listener, supportsPassive ? { passive: true } : undefined))
+            this.$options.listeners.forEach(item => item.el.removeEventListener(item.name, item.listener, supportsPassive ? { passive: true } : undefined))
          }
       },
       watch: {
@@ -360,8 +361,8 @@
 
                   })
                }
-               if (true) {
-                  document.addEventListener("click", ({ clientX, clientY }) => {
+               if (this.clickable) {
+                  const handler = ({ clientX, clientY }) => {
                      switch (this.type.toUpperCase()) {
                         case "LEFT":
                            if (clientX > this.width) {
@@ -392,12 +393,15 @@
                            }
                            break
                      }
-                  })
+                  }
+						document.addEventListener("click", handler)
+                  this.$options.listeners.push({ el: document, name: "click", listener: handler })
                }
                toArray(newVal[0]).forEach(item => {
                   window.addEventListener(item, start)
                   this.$options.listeners.push({
                      name: item,
+							el: window,
                      listener: start
                   }, supportsPassive ? { passive: true } : undefined)
                })
@@ -405,6 +409,7 @@
                   window.addEventListener(item, move, supportsPassive ? { passive: true } : undefined)
                   this.$options.listeners.push({
                      name: item,
+							el: window,
                      listener: move
                   })
                })
@@ -412,6 +417,7 @@
                   window.addEventListener(item, end)
                   this.$options.listeners.push({
                      name: item,
+							el: window,
                      listener: end
                   }, supportsPassive ? { passive: true } : undefined)
                })
