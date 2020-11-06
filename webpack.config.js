@@ -1,6 +1,5 @@
 const { resolve } = require('path')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const { name } = require("./package.json")
 
 module.exports = {
@@ -12,9 +11,7 @@ module.exports = {
    plugins: [
         new UglifyJsPlugin({
          exclude: [/\.min\.js$/gi] // skip pre-minified libs
-      }),
-          // make sure to include the plugin!
-          new VueLoaderPlugin()
+      })
     ],
    module: {
       rules: [
@@ -28,10 +25,6 @@ module.exports = {
                   plugins: ['@babel/plugin-proposal-object-rest-spread']
                }
             }
-         },
-         {
-            test: /\.vue$/,
-            loader: 'vue-loader'
          }
       ]
    }
